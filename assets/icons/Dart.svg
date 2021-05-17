@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink" width="136.15" height="136.12" viewBox="0 0 136.15 136.12">
+	<defs>
+		<radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.5" gradientTransform="matrix(1, 0, 0, -1, 0, 0.886)" gradientUnits="objectBoundingBox">
+			<stop offset="0" stop-color="#fff" stop-opacity="0.102"/>
+			<stop offset="1" stop-color="#fff" stop-opacity="0"/>
+		</radialGradient>
+	</defs>
+	<g id="Dart" transform="translate(-1.88 -0.59)">
+		<g id="Group_6" data-name="Group 6">
+			<path id="Path_9" data-name="Path 9" d="M29.64,108.94,6.36,85.66A15.832,15.832,0,0,1,1.88,74.91a18.091,18.091,0,0,1,1.79-6.27L25.16,23.87Z" fill="#01579b"/>
+			<path id="Path_10" data-name="Path 10" d="M109.34,28.35,86.06,5.07C84.03,3.03,79.79.59,76.21.59a16.573,16.573,0,0,0-8.06,1.79L25.17,23.87Z" fill="#40c4ff"/>
+			<path id="Path_11" data-name="Path 11" d="M57.4,136.7h56.42V112.52L71.73,99.09l-38.5,13.43Z" fill="#40c4ff"/>
+			<path id="Path_12" data-name="Path 12" d="M25.17,96.41c0,7.18.9,8.95,4.48,12.54l3.58,3.58h80.59L74.42,67.76,25.17,23.88Z" fill="#29b6f6"/>
+			<path id="Path_13" data-name="Path 13" d="M96.8,23.87H25.16l88.65,88.65h24.18V57L109.34,28.35C105.32,24.31,101.74,23.87,96.8,23.87Z" fill="#01579b"/>
+			<path id="Path_14" data-name="Path 14" d="M30.54,109.84c-3.58-3.6-4.48-7.14-4.48-13.43V24.77l-.9-.9V96.4c.01,6.3.01,8.04,5.38,13.44l2.69,2.69h0Z" fill="#fff" opacity="0.2"/>
+			<path id="Path_15" data-name="Path 15" d="M137.1,56.11v55.52H112.92l.9.89H138V57.01Z" fill="#263238" opacity="0.2"/>
+			<path id="Path_16" data-name="Path 16" d="M109.34,28.35c-4.44-4.44-8.08-4.48-13.43-4.48H25.17l.9.9H95.92c2.66,0,9.41-.45,13.42,3.58Z" fill="#fff" opacity="0.2"/>
+			<path id="Path_17" data-name="Path 17" d="M137.1,56.11,109.34,28.35,86.06,5.07C84.03,3.03,79.79.59,76.21.59a16.573,16.573,0,0,0-8.06,1.79L25.17,23.87,3.68,68.64a18.091,18.091,0,0,0-1.79,6.27A15.833,15.833,0,0,0,6.37,85.66l21.46,21.3a24.2,24.2,0,0,0,1.83,1.98l.9.9,2.69,2.69,23.28,23.28.9.9h56.42V112.53h24.18V57.01Z" opacity="0.2" fill="url(#radial-gradient)"/>
+		</g>
+	</g>
+</svg>

@@ -1,0 +1,1548 @@
+@charset "UTF-8";
+/*
+    - Criar animação para ativar e desativar butão de menu.
+*/
+html[data-theme="light"] {
+  width: 100%;
+  height: 100%;
+  --text: #312628;
+  --yellow: #fef503;
+  --primary: #4953B8;
+  --emphasis: #eeeeee;
+  --secondary: #00db86;
+  --background: #F2F3F5;
+  background: var(--background);
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+article {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+article section.hidden {
+  -webkit-transition: all 0.7 ease-out;
+  transition: all 0.7 ease-out;
+  -webkit-animation: page-out 1.5s normal;
+          animation: page-out 1.5s normal;
+}
+
+article section.show {
+  -webkit-transition: all 0.7 ease-in;
+  transition: all 0.7 ease-in;
+  -webkit-animation: page-in 1.5s normal;
+          animation: page-in 1.5s normal;
+}
+
+article #about {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: none;
+  overflow-x: hidden;
+  margin-left: 168px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: calc(100% - 168px);
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+article #about #about-info {
+  width: 40%;
+}
+
+article #about #about-info h1 {
+  font-size: 88px;
+  font-weight: 700;
+  color: var(--primary);
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+article #about #about-info em {
+  opacity: 0.4;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 16px;
+  font-style: normal;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+article #about #about-info p {
+  width: 92%;
+  opacity: 0.9;
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 24px;
+  line-height: 32px;
+  color: var(--text);
+}
+
+article #about #about-perfil {
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  width: 60%;
+  height: 100%;
+  position: relative;
+}
+
+article #about #about-perfil #circle {
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  width: 90%;
+  height: 90%;
+  opacity: 0.5;
+  position: absolute;
+  border-radius: 100%;
+  -webkit-filter: blur(10rem);
+          filter: blur(10rem);
+  background: var(--yellow);
+}
+
+article #about #about-perfil img {
+  right: 0;
+  z-index: 2;
+  height: 100%;
+  position: absolute;
+}
+
+article #about.pageIn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: page-in 1s;
+          animation: page-in 1s;
+}
+
+article #about.pageOut {
+  -webkit-animation: page-out 1s;
+          animation: page-out 1s;
+}
+
+article #experiences {
+  display: none;
+  margin-left: 168px;
+  position: relative;
+  overflow-x: hidden;
+  width: calc(100% - 168px);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+article #experiences #career {
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  row-gap: 2rem;
+  margin-top: 2rem;
+  -webkit-column-gap: 2rem;
+          column-gap: 2rem;
+  list-style: none;
+  overflow-y: hidden;
+  padding-bottom: 2rem;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+article #experiences #career li {
+  width: 90%;
+  height: 100%;
+  padding: 48px;
+  margin-left: 2rem;
+  background: var(--emphasis);
+  border: 1px solid rgba(0, 0, 0, 0.01);
+  -webkit-box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.08);
+          box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.08);
+}
+
+article #experiences #career li h2 {
+  font-size: 88px;
+  font-weight: 800;
+  color: var(--text);
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+article #experiences #career li h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 1.5px;
+}
+
+article #experiences #career li h4 {
+  font-size: 36px;
+  margin-top: 56px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 24px;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+article #experiences #career li p {
+  font-weight: 500;
+  color: var(--text);
+  text-align: justify;
+  margin-bottom: 36px;
+}
+
+article #experiences #career li em {
+  opacity: 0.8;
+  font-weight: 500;
+  padding: 5px 10px;
+  color: var(--text);
+  background: rgba(0, 0, 0, 0.08);
+}
+
+article #experiences #career li #status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+article #experiences #career li #status div {
+  width: 90%;
+  height: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+article #experiences #career li #status #bar {
+  width: 100%;
+  height: 8px;
+  opacity: 0.7;
+  background: var(--secondary);
+}
+
+article #experiences #career li #status svg {
+  width: 24px;
+  height: 24px;
+  opacity: 0.9;
+  color: var(--secondary);
+}
+
+article #experiences #career #atual {
+  color: var(--emphasis);
+  background: var(--primary);
+}
+
+article #experiences #career #atual h2, article #experiences #career #atual h3, article #experiences #career #atual h4, article #experiences #career #atual p, article #experiences #career #atual em {
+  color: var(--background);
+}
+
+article #experiences #career #atual h2 {
+  font-weight: 700;
+}
+
+article #experiences #career #atual h3 {
+  font-weight: 500;
+}
+
+article #experiences #career #atual p {
+  font-weight: 400;
+  margin-bottom: 58px;
+}
+
+article #experiences #career #atual em {
+  font-weight: 400;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+article #experiences #career #atual #status {
+  margin-top: 24px;
+}
+
+article #experiences #career #atual #status div {
+  width: 90%;
+  height: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+article #experiences #career #atual #status #bar {
+  width: 5%;
+  height: 8px;
+  opacity: 0.9;
+  background: var(--yellow);
+}
+
+article #experiences #career #atual #status svg {
+  opacity: 0.9;
+  color: var(--yellow);
+}
+
+article #experiences #career #finish p {
+  margin-bottom: 58px;
+}
+
+article #experiences #career #finish #status {
+  margin-top: 24px;
+}
+
+article #experiences #career #second p {
+  margin-bottom: 58px;
+}
+
+article #experiences #career #second #status {
+  margin-top: 24px;
+}
+
+article #experiences #career #third #status {
+  margin-top: 24px;
+}
+
+article #experiences #career #fourth p {
+  margin-bottom: 72px;
+}
+
+article #experiences #career #fourth #status {
+  margin-top: 24px;
+}
+
+article #experiences .sun {
+  top: -8px;
+  left: 150px;
+  z-index: -1;
+  opacity: 0.5;
+  width: 1000px;
+  height: 1000px;
+  position: absolute;
+  border-radius: 100%;
+  -webkit-filter: blur(5rem);
+          filter: blur(5rem);
+  background: var(--yellow);
+}
+
+article #experiences .tree {
+  top: 30%;
+  left: 40%;
+  z-index: -1;
+  opacity: 0.4;
+  width: 900px;
+  height: 900px;
+  position: absolute;
+  border-radius: 100%;
+  -webkit-filter: blur(10rem);
+          filter: blur(10rem);
+  background: var(--secondary);
+}
+
+article #experiences .berry {
+  right: 20%;
+  z-index: -1;
+  bottom: -90%;
+  width: 900px;
+  height: 900px;
+  position: absolute;
+  border-radius: 100%;
+  -webkit-filter: blur(10rem);
+          filter: blur(10rem);
+  background: var(--primary);
+}
+
+article #experiences.pageIn {
+  display: block;
+  -webkit-animation: page-in 1s;
+          animation: page-in 1s;
+}
+
+article #experiences.pageOut {
+  -webkit-animation: page-out 1s;
+          animation: page-out 1s;
+}
+
+article #skills {
+  height: 100%;
+  display: none;
+  margin-left: 168px;
+  overflow-x: hidden;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: calc(100% - 168px);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+article #skills #hability {
+  width: 60%;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: transparent;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+article #skills #hability #tec-web {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+article #skills #hability #tec-web #html {
+  width: 30%;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+article #skills #hability #tec-web #html h3 {
+  opacity: 0.7;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+article #skills #hability #tec-web #html img {
+  width: 100%;
+  height: 100%;
+}
+
+article #skills #hability #tec-web #html #progress-html {
+  width: 60%;
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+article #skills #hability #tec-web #html #progress-html #bar-html {
+  width: 60%;
+  height: 100%;
+  background: #e34c26;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+article #skills #hability #tec-web #css {
+  width: 30%;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+article #skills #hability #tec-web #css h3 {
+  opacity: 0.7;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+article #skills #hability #tec-web #css img {
+  width: 100%;
+  height: 100%;
+}
+
+article #skills #hability #tec-web #css #progress-css {
+  width: 60%;
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+article #skills #hability #tec-web #css #progress-css #bar-css {
+  width: 50%;
+  height: 100%;
+  background: #264de4;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+article #skills #hability #tec-web #js {
+  width: 30%;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+article #skills #hability #tec-web #js h3 {
+  opacity: 0.7;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+article #skills #hability #tec-web #js img {
+  width: 100%;
+  height: 100%;
+}
+
+article #skills #hability #tec-web #js #progress-js {
+  width: 60%;
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+article #skills #hability #tec-web #js #progress-js #bar-js {
+  width: 50%;
+  height: 100%;
+  background: #f0db4f;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+article #skills #hability #tec-web #sass {
+  width: 30%;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+article #skills #hability #tec-web #sass h3 {
+  opacity: 0.7;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+article #skills #hability #tec-web #sass img {
+  width: 100%;
+  height: 100%;
+}
+
+article #skills #hability #tec-web #sass #progress-sass {
+  width: 60%;
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+article #skills #hability #tec-web #sass #progress-sass #bar-sass {
+  width: 60%;
+  height: 100%;
+  background: #ce679a;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+article #skills #hability #tec-web #php {
+  width: 30%;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  margin-left: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+article #skills #hability #tec-web #php h3 {
+  opacity: 0.7;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+article #skills #hability #tec-web #php img {
+  width: 100%;
+  height: 100%;
+}
+
+article #skills #hability #tec-web #php #progress-php {
+  width: 60%;
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+article #skills #hability #tec-web #php #progress-php #bar-php {
+  width: 40%;
+  height: 100%;
+  background: #787CB5;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+article #skills #hability #tec-backend {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+article #skills #hability #tec-backend #c {
+  width: 30%;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+article #skills #hability #tec-backend #c h3 {
+  opacity: 0.7;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+article #skills #hability #tec-backend #c img {
+  width: 100%;
+  height: 100%;
+}
+
+article #skills #hability #tec-backend #c #progress-c {
+  width: 80%;
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+article #skills #hability #tec-backend #c #progress-c #bar-c {
+  width: 60%;
+  height: 100%;
+  background: #3949ab;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+article #skills #hability #tec-backend #java {
+  width: 30%;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+article #skills #hability #tec-backend #java h3 {
+  opacity: 0.7;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+article #skills #hability #tec-backend #java img {
+  width: 100%;
+  height: 100%;
+}
+
+article #skills #hability #tec-backend #java #progress-java {
+  width: 80%;
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+article #skills #hability #tec-backend #java #progress-java #bar-java {
+  width: 30%;
+  height: 100%;
+  background: #e66e00;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+article #skills #hability #tec-backend #python {
+  width: 30%;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+article #skills #hability #tec-backend #python h3 {
+  opacity: 0.7;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+article #skills #hability #tec-backend #python img {
+  width: 100%;
+  height: 100%;
+}
+
+article #skills #hability #tec-backend #python #progress-python {
+  width: 80%;
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+article #skills #hability #tec-backend #python #progress-python #bar-python {
+  width: 40%;
+  height: 100%;
+  background: #ffd747;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+article #skills #hability #tec-backend #node {
+  width: 30%;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+article #skills #hability #tec-backend #node h3 {
+  opacity: 0.7;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+article #skills #hability #tec-backend #node img {
+  width: 100%;
+  height: 100%;
+}
+
+article #skills #hability #tec-backend #node #progress-node {
+  width: 80%;
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+article #skills #hability #tec-backend #node #progress-node #bar-node {
+  width: 40%;
+  height: 100%;
+  background: #026E00;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+article #skills #hability #tec-backend #sql {
+  width: 30%;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+article #skills #hability #tec-backend #sql h3 {
+  opacity: 0.7;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+article #skills #hability #tec-backend #sql img {
+  width: 100%;
+  height: 100%;
+}
+
+article #skills #hability #tec-backend #sql #progress-sql {
+  width: 80%;
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+article #skills #hability #tec-backend #sql #progress-sql #bar-sql {
+  width: 40%;
+  height: 100%;
+  background: #e48e00;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+article #skills #hability #tec-backend #mongodb {
+  width: 30%;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+article #skills #hability #tec-backend #mongodb h3 {
+  opacity: 0.7;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+article #skills #hability #tec-backend #mongodb img {
+  width: 100%;
+  height: 100%;
+}
+
+article #skills #hability #tec-backend #mongodb #progress-mongodb {
+  width: 80%;
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+article #skills #hability #tec-backend #mongodb #progress-mongodb #bar-mongodb {
+  width: 55%;
+  height: 100%;
+  background: #10AA50;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+article #skills #hability #tec-backend #docker {
+  width: 30%;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  margin-left: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+article #skills #hability #tec-backend #docker h3 {
+  opacity: 0.7;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+article #skills #hability #tec-backend #docker img {
+  width: 100%;
+  height: 100%;
+}
+
+article #skills #hability #tec-backend #docker #progress-docker {
+  width: 80%;
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+article #skills #hability #tec-backend #docker #progress-docker #bar-docker {
+  width: 40%;
+  height: 100%;
+  background: #0073EC;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+article #skills #hability #tec-mobile {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: var(--primary);
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+article #skills #hability #tec-mobile #android {
+  width: 40%;
+  height: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+article #skills #hability #tec-mobile #android h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: var(--emphasis);
+}
+
+article #skills #hability #tec-mobile #android img {
+  width: 100%;
+  height: 100%;
+}
+
+article #skills #hability #tec-mobile #android #progress-android {
+  width: 80%;
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 20px;
+  background: rgba(238, 238, 238, 0.15);
+}
+
+article #skills #hability #tec-mobile #android #progress-android #bar-android {
+  width: 40%;
+  height: 100%;
+  background: #32de84;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+article #skills #hability #tec-mobile #react {
+  width: 40%;
+  height: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+article #skills #hability #tec-mobile #react h3 {
+  opacity: 0.9;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: var(--emphasis);
+}
+
+article #skills #hability #tec-mobile #react img {
+  width: 100%;
+  height: 100%;
+}
+
+article #skills #hability #tec-mobile #react #progress-react {
+  width: 80%;
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 20px;
+  background: rgba(238, 238, 238, 0.15);
+}
+
+article #skills #hability #tec-mobile #react #progress-react #bar-react {
+  width: 40%;
+  height: 100%;
+  background: #61dafb;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+article #skills #hability #tec-mobile #dart {
+  width: 40%;
+  height: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+article #skills #hability #tec-mobile #dart h3 {
+  opacity: 0.9;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: var(--emphasis);
+}
+
+article #skills #hability #tec-mobile #dart img {
+  width: 100%;
+  height: 100%;
+}
+
+article #skills #hability #tec-mobile #dart #progress-dart {
+  width: 80%;
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 20px;
+  background: rgba(238, 238, 238, 0.15);
+}
+
+article #skills #hability #tec-mobile #dart #progress-dart #bar-dart {
+  width: 45%;
+  height: 100%;
+  background: #16B9FD;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+article #skills #hability #tec-mobile #flutter {
+  width: 40%;
+  height: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+article #skills #hability #tec-mobile #flutter h3 {
+  opacity: 0.9;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: var(--emphasis);
+}
+
+article #skills #hability #tec-mobile #flutter img {
+  width: 100%;
+  height: 100%;
+}
+
+article #skills #hability #tec-mobile #flutter #progress-flutter {
+  width: 80%;
+  height: 10px;
+  margin-top: 8px;
+  border-radius: 20px;
+  background: rgba(238, 238, 238, 0.15);
+}
+
+article #skills #hability #tec-mobile #flutter #progress-flutter #bar-flutter {
+  width: 50%;
+  height: 100%;
+  background: #16B9FD;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+article #skills #perfil {
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  width: 60%;
+  height: 100%;
+  position: relative;
+}
+
+article #skills #perfil #circle {
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  width: 90%;
+  height: 90%;
+  opacity: 0.5;
+  position: absolute;
+  border-radius: 100%;
+  -webkit-filter: blur(10rem);
+          filter: blur(10rem);
+  background: var(--yellow);
+}
+
+article #skills #perfil img {
+  right: 0;
+  z-index: 2;
+  height: 100%;
+  position: absolute;
+}
+
+article #skills #green {
+  left: 0;
+  top: 28%;
+  width: 60%;
+  height: 60%;
+  z-index: -1;
+  opacity: 0.4;
+  position: absolute;
+  border-radius: 100%;
+  -webkit-filter: blur(10rem);
+          filter: blur(10rem);
+  background: var(--secondary);
+}
+
+article #skills.pageIn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: page-in 1s;
+          animation: page-in 1s;
+}
+
+article #skills.pageOut {
+  display: none;
+  -webkit-animation: page-out 1s;
+          animation: page-out 1s;
+}
+
+article #interests {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  overflow-x: hidden;
+  padding-top: 32rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+article #interests .wraper {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 25px;
+  margin-left: 168px;
+  padding-right: 3rem;
+  padding-bottom: 2rem;
+  width: calc(100% - 168px);
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+article #interests .wraper .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-backdrop-filter: blur(100px);
+          backdrop-filter: blur(100px);
+  background: rgba(233, 233, 233, 0.5);
+  -webkit-box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.1);
+          box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.1);
+}
+
+article #interests .wraper .card h2 {
+  opacity: 0.9;
+  font-size: 32px;
+  font-weight: 800;
+  text-align: left;
+  color: var(--text);
+  margin-bottom: 30px;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+article #interests .wraper .card img {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  margin-top: -160px;
+  position: relative;
+}
+
+article #interests .wraper .card p {
+  opacity: 0.6;
+  font-weight: 500;
+  text-align: justify;
+}
+
+article #interests .wraper .card:nth-child(1), article #interests .wraper .card:nth-child(2), article #interests .wraper .card:nth-child(3) {
+  margin-bottom: 120px;
+}
+
+article #interests .wraper .card.ack {
+  background: rgba(73, 83, 184, 0.8);
+}
+
+article #interests .wraper .card.ack h2 {
+  opacity: 1;
+  color: var(--emphasis);
+}
+
+article #interests .wraper .card.ack p {
+  opacity: 0.9;
+  font-weight: 400;
+  color: var(--background);
+}
+
+article #interests .green {
+  top: 0;
+  left: 1%;
+  z-index: -3;
+  opacity: 0.3;
+  width: 60%;
+  height: 60%;
+  position: absolute;
+  border-radius: 100%;
+  -webkit-filter: blur(10rem);
+          filter: blur(10rem);
+  background: var(--secondary);
+}
+
+article #interests .primary {
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  width: 40%;
+  height: 40%;
+  opacity: 0.2;
+  position: absolute;
+  border-radius: 100%;
+  -webkit-filter: blur(10rem);
+          filter: blur(10rem);
+  background: var(--primary);
+}
+
+article #interests .yellow {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  position: absolute;
+  border-radius: 100%;
+  -webkit-filter: blur(10rem);
+          filter: blur(10rem);
+  background: var(--yellow);
+}
+
+article #interests.pageIn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: page-in 1s;
+          animation: page-in 1s;
+}
+
+article #contact {
+  margin: 0;
+  height: 100%;
+  display: none;
+  margin-top: 2rem;
+  margin-left: 168px;
+  position: absolute;
+  overflow-x: hidden;
+  padding-right: 40px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: calc(100% - 168px);
+}
+
+article #contact .mail {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+article #contact .mail form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+article #contact #perfil {
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  z-index: 2;
+  height: 100%;
+  position: absolute;
+}
+
+article #contact #perfil #circle {
+  right: 0;
+  bottom: 0;
+  width: 90%;
+  z-index: -1;
+  height: 90%;
+  opacity: 0.5;
+  position: absolute;
+  border-radius: 100%;
+  -webkit-filter: blur(10rem);
+          filter: blur(10rem);
+  background: var(--yellow);
+}
+
+article #contact #perfil img {
+  right: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+article #contact #green {
+  left: 0;
+  top: 28%;
+  width: 60%;
+  height: 60%;
+  z-index: -1;
+  opacity: 0.4;
+  position: absolute;
+  border-radius: 100%;
+  -webkit-filter: blur(10rem);
+          filter: blur(10rem);
+  background: var(--secondary);
+}
+
+article #contact.pageIn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: page-in 1s;
+          animation: page-in 1s;
+}
+
+@-webkit-keyframes page-out {
+  from {
+    opacity: 1;
+    margin-left: 168px;
+  }
+  to {
+    opacity: 0;
+    display: none;
+    margin-left: 100%;
+  }
+}
+
+@keyframes page-out {
+  from {
+    opacity: 1;
+    margin-left: 168px;
+  }
+  to {
+    opacity: 0;
+    display: none;
+    margin-left: 100%;
+  }
+}
+
+@-webkit-keyframes page-in {
+  from {
+    opacity: 0;
+    display: none;
+    margin-left: 100%;
+  }
+  to {
+    opacity: 1;
+    height: 100%;
+  }
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    display: none;
+    margin-left: 100%;
+  }
+  to {
+    opacity: 1;
+    height: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

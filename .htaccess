@@ -1,0 +1,3 @@
+## Redirect internal
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^ %{REQUEST_URI}.html
